@@ -1,0 +1,15 @@
+﻿.bomanite-instructions {
+    color: red;
+    font-weight: bold;
+}
+.bomanite-instructions>li {
+    color: red;
+    font-size: 1.3em;
+}
+.bomanite-lower-alpha {
+    list-style-type: lower-alpha;
+}
+.bomanite-highlight {
+    color: black;
+    background-color: yellow;
+}
