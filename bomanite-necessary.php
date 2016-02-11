@@ -3,7 +3,7 @@
 Plugin Name: Bomanite Plugin by Ramona Eid
 Plugin URI: http://www.checklistme.com/
 Description: Necessary plugin for Bomanite functionality.  Do NOT deactivate or delete.
-Version: 1.0.1
+Version: 1.0.0
 Author: Ramona Eid
 Author URI: http://www.checklistme.com/bio.html
 License: GPL2
@@ -27,8 +27,6 @@ along with Bomanite Plugin. If not, see https://www.gnu.org/licenses/gpl-2.0.htm
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
-include_once( 'github-plugin-updater/updater.php' );
-
 add_action( 'init', 'bomanite_init' );
 
 function bomanite_init() {
@@ -51,26 +49,32 @@ function bomanite_init() {
 
     add_action( 'admin_enqueue_scripts', 'bomanite_enqueue_scripts' );
     add_action( 'login_enqueue_scripts', 'bomanite_enqueue_script' );
-}
 
-if ( is_admin() ) {
-    
-    $config = array(
-        'slug'                  => plugin_basename( __FILE__ ),
-        'proper_folder_name'    => 'bomanite-necessary',
-        'api_url'               => 'https://api.github.com/repos/RamonaEid/PluginDev',
-        'raw_url'               => 'https://raw.github.com/RamonaEid/PluginDev/master',
-        'github_url'            => 'https://github.com/RamonaEid/PluginDev',
-        'zip_url'               => 'https://github.com/username/PluginDev/zipball/master',
-        'sslverify'             => true,
-        'requires'              => '3.0',
-        'tested'                => '3.3',
-        'readme'                => 'README.md',
-        'access_token'          => ''
-    );
-    
-    new WP_GitHub_Updater( $config );
-    
+    include_once( 'github-plugin-updater/updater.php' );
+
+    define( 'WP_GITHUB_FORCE_UPDATE', true );
+
+    if ( is_admin() ) {
+        
+        $config = array(
+            'slug'                  => plugin_basename( __FILE__ ),
+            'proper_folder_name'    => 'bomanite-necessary',
+            'api_url'               => 'https://api.github.com/repos/RamonaEid/PluginDev',
+            'raw_url'               => 'https://raw.github.com/RamonaEid/PluginDev/master',
+            'github_url'            => 'https://github.com/RamonaEid/PluginDev',
+            'zip_url'               => 'https://github.com/username/PluginDev/zipball/master',
+            'sslverify'             => true,
+            'requires'              => '3.0',
+            'tested'                => '3.3',
+            'readme'                => 'README.md',
+            'access_token'          => ''
+        );
+        
+        new WP_GitHub_Updater( $config );
+        
+    }
+
+
 }
 
 
