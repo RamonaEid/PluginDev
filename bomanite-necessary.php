@@ -62,7 +62,7 @@ function bomanite_init() {
             'api_url'               => 'https://api.github.com/repos/RamonaEid/PluginDev',
             'raw_url'               => 'https://raw.github.com/RamonaEid/PluginDev/master',
             'github_url'            => 'https://github.com/RamonaEid/PluginDev',
-            'zip_url'               => 'https://github.com/username/PluginDev/zipball/master',
+            'zip_url'               => 'https://github.com/RamonaEid/PluginDev/zipball/master',
             'sslverify'             => true,
             'requires'              => '3.0',
             'tested'                => '3.3',
