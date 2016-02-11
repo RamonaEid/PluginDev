@@ -3,7 +3,7 @@
 Plugin Name: Bomanite Plugin by Ramona Eid
 Plugin URI: http://www.checklistme.com/
 Description: Necessary plugin for Bomanite functionality.  Do NOT deactivate or delete.
-Version: 1.0.1
+Version: 1.0.0
 Author: Ramona Eid
 Author URI: http://www.checklistme.com/bio.html
 License: GPL2
@@ -54,22 +54,23 @@ function bomanite_init() {
 }
 
 if ( is_admin() ) {
+    
     $config = array(
         'slug'                  => plugin_basename( __FILE__ ),
-        'proper_folder_name'    => 'bomanite-necessary',
+        'proper_folder_name'    => 'plugin-name',
         'api_url'               => 'https://api.github.com/repos/RamonaEid/PluginDev',
         'raw_url'               => 'https://raw.github.com/RamonaEid/PluginDev/master',
         'github_url'            => 'https://github.com/RamonaEid/PluginDev',
-        'zip_url'               => 'https://github.com/RamonaEid/PluginDev/zipball/master',
+        'zip_url'               => 'https://github.com/username/PluginDev/zipball/master',
         'sslverify'             => true,
         'requires'              => '3.0',
         'tested'                => '3.3',
         'readme'                => 'README.md',
         'access_token'          => ''
     );
-
+    
     new WP_GitHub_Updater( $config );
-
+    
 }
 
 
