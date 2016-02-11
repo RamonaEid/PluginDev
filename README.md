@@ -1,3 +1,3 @@
 # PluginDev
 
-~Current Version:1.0.1~
+~Current Version:1.0.0~
