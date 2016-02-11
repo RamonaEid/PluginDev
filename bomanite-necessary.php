@@ -57,7 +57,7 @@ if ( is_admin() ) {
     
     $config = array(
         'slug'                  => plugin_basename( __FILE__ ),
-        'proper_folder_name'    => 'plugin-name',
+        'proper_folder_name'    => 'bomanite-necessary',
         'api_url'               => 'https://api.github.com/repos/RamonaEid/PluginDev',
         'raw_url'               => 'https://raw.github.com/RamonaEid/PluginDev/master',
         'github_url'            => 'https://github.com/RamonaEid/PluginDev',
