@@ -11,31 +11,32 @@ function bomanite_get_accordion_html() {
     global $post;
     if ( ($post->post_title) === $bomanite_landingpage )  : 
 
-        $licenseesubhead = get_post_meta( $post->ID, 'custom_licenseesubhead', true );
-        $phone = get_post_meta( $post->ID, 'custom_phone', true );
-        $fax = get_post_meta( $post->ID, 'custom_fax', true );
-        $email = get_post_meta( $post->ID, 'custom_email', true );
-        $website = get_post_meta( $post->ID, 'custom_website', true );
-        $mailingaddress = get_post_meta( $post->ID, 'custom_mailingaddress', true );
-        $shippingaddress = get_post_meta( $post->ID, 'custom_shippingaddress', true );
-        $qualification = get_post_meta( $post->ID, 'custom_qualification', true );
-        $departmentheads = get_post_meta( $post->ID, 'custom_departmentheads', true );
-        $services = get_post_meta( $post->ID, 'custom_services', true );
-        $bonding = get_post_meta( $post->ID, 'custom_bonding', true );
-        $samplepolicy = get_post_meta( $post->ID, 'custom_samplepolicy', true );
-        $freeestimates = get_post_meta( $post->ID, 'custom_freeestimates', true );
-        $continuingeducation = get_post_meta( $post->ID, 'custom_continuingeducation', true );
-        $geographicservicearea = get_post_meta( $post->ID, 'custom_geographicservicearea', true );
-        $numberofyearsinbusiness = get_post_meta( $post->ID, 'custom_numberofyearsinbusiness', true );
-        $bomanitelicensee = get_post_meta( $post->ID, 'custom_bomanitelicensee', true );
-        $numberofemployees = get_post_meta( $post->ID, 'custom_numberofemployees', true );
-        $keyemployeesandqualifications = get_post_meta( $post->ID, 'custom_keyemployeesandqualifications', true );
-        $onsiteshowroom = get_post_meta( $post->ID, 'custom_onsiteshowroom', true );
-        $ataaccreditedshowroom = get_post_meta( $post->ID, 'custom_ataaccreditedshowroom', true );
-        $samplesanddisplaysviewable = get_post_meta( $post->ID, 'custom_samplesanddisplaysviewable', true );
-        $showroomhours = get_post_meta( $post->ID, 'custom_showroomhours', true );
-        $otherinfo = get_post_meta( $post->ID, 'custom_otherinfo', true );
-        $showroomaddress = get_post_meta( $post->ID, 'custom_showroomaddress', true );
+        $custom_fields = get_post_custom( $post->ID );
+        $licenseesubhead = $custom_fields['custom_licenseesubhead'][0];
+        $phone = $custom_fields['custom_phone'][0];
+        $fax = $custom_fields['custom_fax'][0];
+        $email = $custom_fields['custom_email'][0];
+        $website = $custom_fields['custom_website'][0];
+        $mailingaddress = $custom_fields['custom_mailingaddress'][0];
+        $shippingaddress = $custom_fields['custom_shippingaddress'][0];
+        $qualification = $custom_fields['custom_qualification'][0];
+        $departmentheads = $custom_fields['custom_departmentheads'][0];
+        $services = $custom_fields['custom_services'][0];
+        $bonding = $custom_fields['custom_bonding'][0];
+        $samplepolicy = $custom_fields['custom_samplepolicy'][0];
+        $freeestimates = $custom_fields['custom_freeestimates'][0];
+        $continuingeducation = $custom_fields['custom_continuingeducation'][0];
+        $geographicservicearea = $custom_fields['custom_geographicservicearea'][0];
+        $numberofyearsinbusiness = $custom_fields['custom_numberofyearsinbusiness'][0];
+        $bomanitelicensee = $custom_fields['custom_bomanitelicensee'][0];
+        $numberofemployees = $custom_fields['custom_numberofemployees'][0];
+        $keyemployeesandqualifications = $custom_fields['custom_keyemployeesandqualifications'][0];
+        $onsiteshowroom = $custom_fields['custom_onsiteshowroom'][0];
+        $ataaccreditedshowroom = $custom_fields['custom_ataaccreditedshowroom'][0];
+        $samplesanddisplaysviewable = $custom_fields['custom_samplesanddisplaysviewable'][0];
+        $showroomhours = $custom_fields['custom_showroomhours'][0];
+        $otherinfo = $custom_fields['custom_otherinfo'][0];
+        $showroomaddress = $custom_fields['custom_showroomaddress'][0];
 ?>
         <!--<p><?php echo '$bomanite_landingpage: ' . $bomanite_landingpage ?></p>-->
         <h3 class="licenseesubhead"><?php echo $licenseesubhead ?></h3>
@@ -218,5 +219,11 @@ function bomanite_get_accordion_html() {
     //var_dump($bomanite_landingpage);
     //var_dump(($post->post_title) === $bomanite_landingpage);
     //die('get_bomanite_accordion_html');
+    //var_dump(get_post_custom($post->ID));
+    //$custom_fields = get_post_custom($post->ID);
+    //echo $custom_fields['custom_phone'][0];
+    //foreach ( $custom_fields as $key => $value ) {
+    //    echo $key . " => " .$value[0] . "<br />";
+    //}
 }
 ?>
