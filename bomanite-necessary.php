@@ -3,7 +3,7 @@
 Plugin Name: Bomanite Plugin by Ramona Eid
 Plugin URI: http://www.checklistme.com/
 Description: Necessary plugin for Bomanite functionality.  Do NOT deactivate or delete.
-Version: 1.0.0
+Version: 1.1.0
 Author: Ramona Eid
 Author URI: http://www.checklistme.com/bio.html
 License: GPL2
@@ -37,15 +37,13 @@ function bomanite_init() {
     /*wp_register_script($id, $path, $dependencies, $version, $in_footer);*/
     wp_register_script('bomanite-full', plugins_url('js/bomanite_full.js', __FILE__), array('jquery'), '012916', true );
 
-   add_action( 'wp_enqueue_scripts', 'bomanite_enqueue_scripts' );
+    add_action( 'wp_enqueue_scripts', 'bomanite_enqueue_scripts' );
+
+    add_action( 'the_content', 'bomanite_dynamic_content');
 
     add_action( 'admin_footer-post.php', 'bomanite_custom_select_options' );
 
     add_action( 'admin_menu', 'bomanite_add_toolset_menu' );
-
-    //add_action( 'wp_head', 'bomanite_jason_variables' );
-
-    add_action ( 'bomanite_get_accordion', 'bomanite_get_accordion_html' );
 
     add_action( 'admin_enqueue_scripts', 'bomanite_enqueue_scripts' );
     add_action( 'login_enqueue_scripts', 'bomanite_enqueue_script' );
@@ -74,9 +72,15 @@ function bomanite_init() {
         
     }
 
-
 }
 
+function bomanite_get_accordion() {
+    bomanite_get_accordion_html();
+}
+function bomanite_dynamic_content($content){
+    $content = bomanite_get_accordion() . $content;
+    return $content;
+}
 
 function bomanite_enqueue_scripts() {
     wp_enqueue_style( 'jquery-style', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css' );
