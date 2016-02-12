@@ -3,7 +3,7 @@
 Plugin Name: Bomanite Plugin by Ramona Eid
 Plugin URI: http://www.checklistme.com/
 Description: Necessary plugin for Bomanite functionality.  Do NOT deactivate or delete.
-Version: 1.1.0
+Version: 1.1.1
 Author: Ramona Eid
 Author URI: http://www.checklistme.com/bio.html
 License: GPL2
@@ -32,7 +32,7 @@ add_action( 'init', 'bomanite_init' );
 function bomanite_init() {
     include( plugin_dir_path(__FILE__) . 'admin/bomanite-options.php');
     include( plugin_dir_path(__FILE__) . 'admin/bomanite-accordion.php' );
-    //include( plugin_dir_path(__FILE__) . 'admin/bomanite-admin.php' );
+    include( plugin_dir_path(__FILE__) . 'admin/bomanite-admin.php' );
     
     /*wp_register_script($id, $path, $dependencies, $version, $in_footer);*/
     wp_register_script('bomanite-full', plugins_url('js/bomanite_full.js', __FILE__), array('jquery'), '012916', true );
@@ -74,14 +74,6 @@ function bomanite_init() {
 
 }
 
-function bomanite_get_accordion() {
-    bomanite_get_accordion_html();
-}
-function bomanite_dynamic_content($content){
-    $content = bomanite_get_accordion() . $content;
-    return $content;
-}
-
 function bomanite_enqueue_scripts() {
     wp_enqueue_style( 'jquery-style', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css' );
     wp_enqueue_style( 'bomanite-admin-style', plugins_url('css/bomanite_admin.css', __FILE__) );
@@ -96,75 +88,4 @@ function bomanite_enqueue_scripts() {
     );
     wp_localize_script( 'bomanite-full', 'bomanite_options', $scriptData );
 
-}
-
-
-function bomanite_custom_select_options(){
-    if ( ! isset ( $GLOBALS['post'] ) )
-        return;
-
-    $post_type = get_post_type( $GLOBALS['post'] );
-
-    if ( ! post_type_supports( $post_type, 'custom-fields' ) )
-        return;
-
-    
-
-?>
-<script>
-    var landingPageTitle = <?php echo '"' . get_option( 'bomanite_landingpage' ) . '"'; ?>;
-    var customfields = [
-        'custom_bonding',
-        'custom_departmentheads',
-        'custom_email',
-        'custom_fax',
-        'custom_licenseesubhead',
-        'custom_mailingaddress',
-        'custom_phone',
-        'custom_qualification',
-        'custom_services',
-        'custom_shippingaddress',
-        'custom_website',
-        'custom_samplepolicy',
-        'custom_freeestimates',
-        'custom_continuingeducation',
-        'custom_geographicservicearea',
-        'custom_numberofyearsinbusiness',
-        'custom_bomanitelicensee',
-        'custom_numberofemployees',
-        'custom_keyemployeesandqualifications',
-        'custom_onsiteshowroom',
-        'custom_ataaccreditedshowroom',
-        'custom_samplesanddisplaysviewable',
-        'custom_showroomhours',
-        'custom_otherinfo',
-        'custom_showroomaddress'
-    ];
-    jQuery.each(customfields, function (i) {
-        if (jQuery("#title").val() != landingPageTitle) {
-            jQuery("[value='" + customfields[i] + "']").remove();
-        }
-        else {
-            // avoid duplication
-            if (jQuery("[value='" + customfields[i] + "']").length < 1) {
-                jQuery("#metakeyselect").append("<option value='" + customfields[i] + "'>" + customfields[i] + "</option>");
-            }
-                // add an asterisk to indicate complete
-            else {
-                jQuery("[value='" + customfields[i] + "']").text("***" + customfields[i]);
-            }
-        }
-    });
-    jQuery(document).ajaxComplete(function (e) {
-        var completed = jQuery('#the-list td.left').children('input[type="text"]');
-        var len = jQuery(completed).length - 1;
-        
-        //jQuery('#ajax-response').text("Number of completed selections is: " + jQuery(completed).length + ' len is: ' + len);
-        
-        var completedfield = jQuery(jQuery('#the-list td.left').children('input[type="text"]')[len]).val();
-
-        jQuery("[value='" + completedfield + "']").text("***" + completedfield);
-    });
-</script>
-<?php
 }
