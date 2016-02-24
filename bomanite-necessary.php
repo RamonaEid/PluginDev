@@ -76,6 +76,7 @@ function bomanite_init() {
 
 function bomanite_enqueue_scripts() {
     wp_enqueue_style( 'jquery-style', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css' );
+    wp_enqueue_style( 'bomanite-accordion-style', plugins_url('css/bomanite_accordion.css', __FILE__) );
     wp_enqueue_style( 'bomanite-admin-style', plugins_url('css/bomanite_admin.css', __FILE__) );
     //wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer ); $handle(reuired) > all others optiuonal
     wp_enqueue_script( 'jquery-ui-accordion', array('jquery') );
