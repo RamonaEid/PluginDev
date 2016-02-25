@@ -48,6 +48,15 @@ jQuery(document).ready(function ($) {
             });
         };
         // Create Accordion, collapse accordingly
+        function CollapseAccordion(accordion, head, content) {
+            $(accordion).accordion("option", "collapsible", true);
+            $(accordion).accordion("option", "active", false);
+            $(accordion).addClass('hidden-accordion');
+            $(head).unbind("click");
+            $(head).text("");
+            $(content).text("");
+            $(head).css({ "padding": "0px" });
+        };
         $.each(ids, function (i) {
             $(ids[i]).accordion({
                 icons: { "header": headerIcon, "activeHeader": activeHeaderIcon }
@@ -60,15 +69,6 @@ jQuery(document).ready(function ($) {
             }
         });
 
-        function CollapseAccordion(accordion, head, content) {
-            $(accordion).accordion("option", "collapsible", true);
-            $(accordion).accordion("option", "active", false);
-            $(accordion).addClass('hidden-accordion');
-            $(head).unbind("click");
-            $(head).text("");
-            $(content).text("");
-            $(head).css({ "padding": "0px" });
-        };
         // Collapse empty rows
         $.each(jQuery('.row'), function (i) {
             var columns = jQuery(this).children('.grid-parent').children('div[class^="grid-"]');
