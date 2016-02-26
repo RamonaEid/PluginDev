@@ -3,7 +3,7 @@
 Plugin Name: Bomanite Plugin by Ramona Eid
 Plugin URI: http://www.checklistme.com/
 Description: Do NOT deactivate or delete.  Necessary plugin for Bomanite functionality.
-Version: 1.2.1
+Version: 1.2.2
 Author: Ramona Eid
 Author URI: http://www.checklistme.com/bio.html
 License: GPL2
@@ -36,6 +36,7 @@ function bomanite_init() {
     
     /*wp_register_script($id, $path, $dependencies, $version, $in_footer);*/
     wp_register_script('bomanite-full', plugins_url('js/bomanite_full.js', __FILE__), array('jquery'), '012916', true );
+    wp_register_script( 'jquery-ui-accordion', '/wp-includes/js/jquery/ui/jquery.ui.accordion.min.js' );
 
     add_action( 'wp_enqueue_scripts', 'bomanite_enqueue_scripts' );
 
