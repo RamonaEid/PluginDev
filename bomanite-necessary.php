@@ -36,7 +36,7 @@ function bomanite_init() {
     
     /*wp_register_script($id, $path, $dependencies, $version, $in_footer);*/
     wp_register_script('bomanite-full', plugins_url('js/bomanite_full.js', __FILE__), array('jquery'), '012916', true );
-    wp_register_script( 'jquery-ui-accordion', '/wp-includes/js/jquery/ui/jquery.ui.accordion.min.js' );
+    wp_register_script( 'jquery-ui-accordion', '/wp-includes/js/jquery/ui/jquery.ui.accordion.min.js', array('jquery') );
 
     add_action( 'wp_enqueue_scripts', 'bomanite_enqueue_scripts' );
 
