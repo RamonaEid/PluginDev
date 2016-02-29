@@ -11,6 +11,16 @@ function bomanite_dynamic_content($content){
     return $content;
 }
 
+function bomanite_check_unsemantic() {
+    global $wp_styles;
+    $srcs = array_map('basename', (array) wp_list_pluck($wp_styles->registered, 'src') );
+    if ( in_array('unsemantic-grid.min.css', $srcs) || in_array('unsemantic-grid.css', $srcs) ) {
+        /* echo 'unsemantic-grid registered */
+    } else {
+        wp_enqueue_style( 'unsemantic-grid', plugins_url('css/unsemantic-grid.min.css', dirname(__FILE__) ) );
+    }
+}
+
 function bomanite_jason_variables() {
     $bomanite_landingpage = get_option('bomanite_landingpage'); ?>
     <script>
