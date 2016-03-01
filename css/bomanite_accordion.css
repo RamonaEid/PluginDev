@@ -1,4 +1,28 @@
 ﻿/*-------------------------------------------------------------
+    Buttons
+---------------------------------------------------------------*/
+input[type="button"].deal {
+    border: 5px solid #fff;
+    border-radius: 25px;
+    padding: 0 .10em !important;
+}
+
+input[type="button"].blu {
+    background: #0983F0;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    -moz-transition-duration: 0.4s;
+    -o-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+    input[type="button"].blu:hover {
+        border: 5px solid #0983F0;
+        color: #0983F0;
+        background: #fff;
+    }
+
+
+/*-------------------------------------------------------------
     jQuery UI Accordion
 ---------------------------------------------------------------*/
 .licenseesubhead {
