@@ -176,7 +176,7 @@ function bomanite_get_accordion_html() {
             <div class="grid-100 grid-container grid-parent">
                 <div class="grid-100">
                     <div id="bomanite_onsiteshowroom">
-                        <h3>Onsite Showroom</h3>
+                        <h3>Design Center</h3>
                         <div><?php echo $onsiteshowroom ?></div>
                     </div>
 
