@@ -41,7 +41,7 @@ jQuery(document).ready(function ($) {
         if ($('#bomanite_phone').length > 0) {
             $('h1.entry-title').css({
                 "text-align": "center",
-                "padding": "1em 0.5em",
+                "padding": "0.25em 0.5em",
                 "border-top": "0.05em solid #999",
                 "border-bottom": "0.05em solid #999",
                 "margin-bottom": "1em"

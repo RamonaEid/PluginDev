@@ -182,7 +182,7 @@ function bomanite_get_accordion_html() {
 
                     <?php if ( $onsiteshowroom !== 'No' ) : ?>
                     <div id="bomanite_ataaccreditedshowroom">
-                        <h3>ATA accredited showroom</h3>
+                        <h3>AIA accredited showroom</h3>
                         <div><?php echo $ataaccreditedshowroom ?></div>
                     </div>
 
@@ -225,5 +225,16 @@ function bomanite_get_accordion_html() {
     //foreach ( $custom_fields as $key => $value ) {
     //    echo $key . " => " .$value[0] . "<br />";
     //}
+
+    //if ( isset( $_GET['test'] ) ) {
+    //    $test = 'Test exists in QueryString';
+    //}
+    //else {
+    //    $test = 'Can\'t find QueryString from here.';
+    //}
+    //echo $test;
+
+    //$theme = wp_get_theme();
+    //var_dump( $theme->name );
 }
 ?>
