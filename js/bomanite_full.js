@@ -90,4 +90,14 @@ jQuery(document).ready(function ($) {
 
     }
 
+    // Gallery
+    $.each(jQuery('div.gallery'), function (i) {
+        var items = jQuery(this).find('li');
+        //var wGal = items.has('img');
+        var woGal = items.not(items.has('img')).hide();
+        if (woGal.length == items.length) {
+            jQuery(this).hide();
+        }
+    });
+
 });
