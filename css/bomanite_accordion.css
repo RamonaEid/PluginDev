@@ -39,6 +39,17 @@ input[type="button"].blu {
     margin-bottom: 30px;
 }
 
+.dephead, 
+.depheadjob {
+    font-weight: bold;
+}
+.dephead {
+    font-size: 1.25em;
+}
+.depheadjob {
+    font-style: italic;
+}
+
 .ui-accordion div.ui-accordion-content {
     font-size: .7em;
 }

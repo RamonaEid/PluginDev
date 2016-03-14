@@ -5,6 +5,18 @@
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
+function build_dep_head_html( $depheademail, $dephead, $depheadjob ) {
+    $depheadhtml = '';
+    if($depheademail){
+        $curemail = '   <a href="mailto:' . $depheademail . '?cc=info@bomanite.com&subject=From%20Your%20Landing%20Page%20-%20I%20Need%20Info">' . $depheademail . '</a>';
+    }
+    else {
+        $curemail = '';
+    }
+    $depheadhtml = '<p>' . '<span class="dephead">' . $dephead . ':</span><span class="depheadjob"> ' . $depheadjob . '</span> <span class="depheademail">' . $curemail . '</span></p>';
+    return $depheadhtml;
+}
+
 
 function bomanite_get_accordion_html() {
     $bomanite_landingpage = (get_option('bomanite_landingpage') != '') ? get_option('bomanite_landingpage') : 'empty';
@@ -21,20 +33,28 @@ function bomanite_get_accordion_html() {
         $shippingaddress = $custom_fields['custom_shippingaddress'][0];
         $qualification = $custom_fields['custom_qualification'][0];
         $dephead1 = $custom_fields['custom_dephead1'][0];
+        $dephead1job = $custom_fields['custom_dephead1job'][0];
         $dephead1email = $custom_fields['custom_dephead1email'][0];
         $dephead2 = $custom_fields['custom_dephead2'][0];
+        $dephead2job = $custom_fields['custom_dephead2job'][0];
         $dephead2email = $custom_fields['custom_dephead2email'][0];
         $dephead3 = $custom_fields['custom_dephead3'][0];
+        $dephead3job = $custom_fields['custom_dephead3job'][0];
         $dephead3email = $custom_fields['custom_dephead3email'][0];
         $dephead4 = $custom_fields['custom_dephead4'][0];
+        $dephead4job = $custom_fields['custom_dephead4job'][0];
         $dephead4email = $custom_fields['custom_dephead4email'][0];
         $dephead5 = $custom_fields['custom_dephead5'][0];
+        $dephead5job = $custom_fields['custom_dephead5job'][0];
         $dephead5email = $custom_fields['custom_dephead5email'][0];
         $dephead6 = $custom_fields['custom_dephead6'][0];
+        $dephead6job = $custom_fields['custom_dephead6job'][0];
         $dephead6email = $custom_fields['custom_dephead6email'][0];
         $dephead7 = $custom_fields['custom_dephead7'][0];
+        $dephead7job = $custom_fields['custom_dephead7job'][0];
         $dephead7email = $custom_fields['custom_dephead7email'][0];
         $dephead8 = $custom_fields['custom_dephead8'][0];
+        $dephead8job = $custom_fields['custom_dephead8job'][0];
         $dephead8email = $custom_fields['custom_dephead8email'][0];
         $services = $custom_fields['custom_services'][0];
         $bonding = $custom_fields['custom_bonding'][0];
@@ -99,76 +119,28 @@ function bomanite_get_accordion_html() {
                         <div class="normallink">
                             <?php 
                                 if($dephead1) {
-                                    if($dephead1email){
-                                        $curemail = '   <a href="mailto:' . $dephead1email . '?cc=info@bomanite.com&subject=From%20Your%20Landing%20Page%20-%20I%20Need%20Info">' . $dephead1email . '</a>';
-                                    }
-                                    else {
-                                        $curemail = '';
-                                    }
-                                    echo '<p>' . $dephead1 . $curemail . '</p>';
+                                    echo build_dep_head_html( $dephead1email, $dephead1, $dephead1job );
                                 }
                                 if($dephead2) {
-                                    if($dephead2email){
-                                        $curemail = '   <a href="mailto:' . $dephead2email . '?cc=info@bomanite.com&subject=From%20Your%20Landing%20Page%20-%20I%20Need%20Info">' . $dephead2email . '</a>';
-                                    }
-                                    else {
-                                        $curemail = '';
-                                    }
-                                    echo '<p>' . $dephead2 . $curemail . '</p>';
+                                    echo build_dep_head_html( $dephead2email, $dephead2, $dephead2job );
                                 }
                                 if($dephead3) {
-                                    if($dephead3email){
-                                        $curemail = '   <a href="mailto:' . $dephead3email . '?cc=info@bomanite.com&subject=From%20Your%20Landing%20Page%20-%20I%20Need%20Info">' . $dephead3email . '</a>';
-                                    }
-                                    else {
-                                        $curemail = '';
-                                    }
-                                    echo '<p>' . $dephead3 . $curemail . '</p>';
+                                    echo build_dep_head_html( $dephead3email, $dephead3, $dephead3job );
                                 }
                                 if($dephead4) {
-                                    if($dephead4email){
-                                        $curemail = '   <a href="mailto:' . $dephead4email . '?cc=info@bomanite.com&subject=From%20Your%20Landing%20Page%20-%20I%20Need%20Info">' . $dephead4email . '</a>';
-                                    }
-                                    else {
-                                        $curemail = '';
-                                    }
-                                    echo '<p>' . $dephead4 . $curemail . '</p>';
+                                    echo build_dep_head_html( $dephead4email, $dephead4, $dephead4job );
                                 }
                                 if($dephead5) {
-                                    if($dephead5email){
-                                        $curemail = '   <a href="mailto:' . $dephead5email . '?cc=info@bomanite.com&subject=From%20Your%20Landing%20Page%20-%20I%20Need%20Info">' . $dephead5email . '</a>';
-                                    }
-                                    else {
-                                        $curemail = '';
-                                    }
-                                    echo '<p>' . $dephead5 . $curemail . '</p>';
+                                    echo build_dep_head_html( $dephead5email, $dephead5, $dephead5job );
                                 }
                                 if($dephead6) {
-                                    if($dephead6email){
-                                        $curemail = '   <a href="mailto:' . $dephead6email . '?cc=info@bomanite.com&subject=From%20Your%20Landing%20Page%20-%20I%20Need%20Info">' . $dephead6email . '</a>';
-                                    }
-                                    else {
-                                        $curemail = '';
-                                    }
-                                    echo '<p>' . $dephead6 . $curemail . '</p>';
+                                    echo build_dep_head_html( $dephead6email, $dephead6, $dephead6job );
                                 }
                                 if($dephead7) {
-                                    if($dephead7email){
-                                        $curemail = '   <a href="mailto:' . $dephead7email . '?cc=info@bomanite.com&subject=From%20Your%20Landing%20Page%20-%20I%20Need%20Info">' . $dephead7email . '</a>';
-                                    }
-                                    else {
-                                        $curemail = '';
-                                    }
-                                    echo '<p>' . $dephead7 . $curemail . '</p>';
+                                    echo build_dep_head_html( $dephead7email, $dephead7, $dephead7job );
                                 }
                                 if($dephead8) {
-                                    if($dephead8email){
-                                        $curemail = '   <a href="mailto:' . $dephead8email . '?cc=info@bomanite.com&subject=From%20Your%20Landing%20Page%20-%20I%20Need%20Info">' . $dephead8email . '</a>';
-                                    }
-                                    else {
-                                        $curemail = '';
-                                    }
-                                    echo '<p>' . $dephead8 . $curemail . '</p>';
+                                    echo build_dep_head_html( $dephead8email, $dephead8, $dephead8job );
                                 }
                             ?>
 
@@ -309,7 +281,9 @@ function bomanite_get_accordion_html() {
 
     <?php endif; ?>
 
-<?php 
+<?php
+    
+
     //var_dump($post->post_title);
     //var_dump($bomanite_landingpage);
     //var_dump(($post->post_title) === $bomanite_landingpage);
