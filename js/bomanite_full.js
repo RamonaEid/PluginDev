@@ -42,7 +42,7 @@ jQuery(document).ready(function ($) {
             //var website = jQuery('#bomanite_website a').text();
             //var networkHTML = '<h3 class="network">This MicroSite is part of the Bomanite<sup>®</sup> Dealer Network and not the Offical Website of the Licensee</h3>';
             //networkHTML += '<h3>Offical Licensee Website: <a href="http://' + website + '" target="_blank">' + website + '</a></h3>';
-            $('h1.entry-title').before(networkHTML);
+            //$('h1.entry-title').before(networkHTML);
             $('h1.entry-title').css({
                 "text-align": "center",
                 "padding": "0.25em 0.5em",
