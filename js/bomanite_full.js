@@ -31,7 +31,7 @@ jQuery(document).ready(function ($) {
             '#bomanite_numberofemployees',
             '#bomanite_keyemployeesandqualifications',
             '#bomanite_onsiteshowroom',
-            '#bomanite_ataaccreditedshowroom',
+            '#bomanite_aiaaccreditedshowroom',
             '#bomanite_samplesanddisplaysviewable',
             '#bomanite_showroomhours',
             '#bomanite_otherinfo',
