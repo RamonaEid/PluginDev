@@ -37,11 +37,36 @@ jQuery(document).ready(function ($) {
             '#bomanite_otherinfo',
             '#bomanite_showroomaddress'
         ];
+        var nonwebsites = [
+            'Bomanite of Oklahoma',
+            'whatever'
+        ];
+        var omitwebsite = false;
+        var networkHTML = '';
+
+        // Omit Official Licensee Website
+        $.each(nonwebsites, function (i) {
+            if (nonwebsites[i] === bomanite_options.landingpage) {
+                omitwebsite = true;
+                // break out of the loop
+                return false;
+            }
+        });
+        // Prepend Dealer Network verbiage to Title of the page
+        if (omitwebsite) {
+            networkHTML += '<h3 class="network">This MicroSite is part of the Bomanite<sup>®</sup> Dealer Network</h3>';
+        } else {
+            var website = jQuery('#bomanite_website a').text();
+            networkHTML += '<h3 class="network">This MicroSite is part of the Bomanite<sup>®</sup> Dealer Network and not the Offical Website of the Licensee</h3>';
+            networkHTML += '<h3 class="network">Offical Licensee Website: <a href="http://' + website + '" target="_blank">' + website + '</a></h3>';
+        }
+        $('h1.entry-title').before(networkHTML);
+
         // Change the Styling of the Title of the page
         if ($('#bomanite_phone').length > 0) {
             //var website = jQuery('#bomanite_website a').text();
             //var networkHTML = '<h3 class="network">This MicroSite is part of the Bomanite<sup>®</sup> Dealer Network and not the Offical Website of the Licensee</h3>';
-            //networkHTML += '<h3>Offical Licensee Website: <a href="http://' + website + '" target="_blank">' + website + '</a></h3>';
+            //networkHTML += '<h3 class="network">Offical Licensee Website: <a href="http://' + website + '" target="_blank">' + website + '</a></h3>';
             //$('h1.entry-title').before(networkHTML);
             $('h1.entry-title').css({
                 "text-align": "center",
