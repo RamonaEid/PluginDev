@@ -249,7 +249,7 @@ function bomanite_get_accordion_html() {
 
                     <?php if ( $onsiteshowroom !== 'No' ) : ?>
                     <div id="bomanite_aiaaccreditedshowroom">
-                        <h3>AIA accredited showroom</h3>
+                        <h3>AIA accredited Design Center</h3>
                         <div><?php echo $aiaaccreditedshowroom ?></div>
                     </div>
 
@@ -259,7 +259,7 @@ function bomanite_get_accordion_html() {
                     </div>
 
                     <div id="bomanite_showroomhours">
-                        <h3>Showroom Hours</h3>
+                        <h3>Design Center Hours</h3>
                         <div><?php echo $showroomhours ?></div>
                     </div>
 
@@ -269,7 +269,7 @@ function bomanite_get_accordion_html() {
                     </div>
 
                     <div id="bomanite_showroomaddress">
-                        <h3>Showroom Address</h3>
+                        <h3>Design Center Address</h3>
                         <div><?php echo $showroomaddress ?></div>
                     </div>
 
