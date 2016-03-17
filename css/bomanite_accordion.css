@@ -95,6 +95,7 @@ input[type="button"].blu {
 
     .morph:hover {
         border-radius: 50%;
+        opacity: 0.6;
         -webkit-transform: rotate(360deg);
         -moz-transform: rotate(360deg);
         -o-transform: rotate(360deg);
