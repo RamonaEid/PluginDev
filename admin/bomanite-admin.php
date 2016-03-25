@@ -87,7 +87,7 @@ function bomanite_custom_select_options(){
         'custom_freeestimates',
         'custom_continuingeducation',
         'custom_geographicservicearea',
-        'custom_numberofyearsinbusiness',
+        'custom_numberstartyearofbusiness',
         'custom_bomanitelicensee',
         'custom_numberofemployees',
         'custom_keyemployeesandqualifications',

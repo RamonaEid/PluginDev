@@ -62,7 +62,7 @@ function bomanite_get_accordion_html() {
         $freeestimates = $custom_fields['custom_freeestimates'][0];
         $continuingeducation = $custom_fields['custom_continuingeducation'][0];
         $geographicservicearea = $custom_fields['custom_geographicservicearea'][0];
-        $numberofyearsinbusiness = $custom_fields['custom_numberofyearsinbusiness'][0];
+        $numberstartyearofbusiness = $custom_fields['custom_numberstartyearofbusiness'][0];
         $bomanitelicensee = $custom_fields['custom_bomanitelicensee'][0];
         $numberofemployees = $custom_fields['custom_numberofemployees'][0];
         $keyemployeesandqualifications = $custom_fields['custom_keyemployeesandqualifications'][0];
@@ -210,9 +210,9 @@ function bomanite_get_accordion_html() {
         <div class="row">
             <div class="grid-100 grid-container grid-parent">
                 <div class="grid-25">
-                    <div id="bomanite_numberofyearsinbusiness">
+                    <div id="bomanite_numberstartyearofbusiness">
                         <h3>Number of Years In Business</h3>
-                        <div><?php echo $numberofyearsinbusiness ?></div>
+                        <div><?php echo (date('Y')-($numberstartyearofbusiness)) . " years in business" ?></div>
                     </div>
                 </div>
 

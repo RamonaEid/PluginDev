@@ -26,7 +26,7 @@ jQuery(document).ready(function ($) {
             '#bomanite_freeestimates',
             '#bomanite_continuingeducation',
             '#bomanite_geographicservicearea',
-            '#bomanite_numberofyearsinbusiness',
+            '#bomanite_numberstartyearofbusiness',
             '#bomanite_bomanitelicensee',
             '#bomanite_numberofemployees',
             '#bomanite_keyemployeesandqualifications',
