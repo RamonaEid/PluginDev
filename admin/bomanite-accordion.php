@@ -5,7 +5,7 @@
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
-function build_dep_head_html( $depheademail, $dephead, $depheadjob ) {
+function create_dep_head_html( $depheademail, $dephead, $depheadjob ) {
     $depheadhtml = '';
     if($depheademail){
         $curemail = '   <a href="mailto:' . $depheademail . '?cc=info@bomanite.com&subject=From%20Your%20Landing%20Page%20-%20I%20Need%20Info">' . $depheademail . '</a>';
@@ -17,6 +17,19 @@ function build_dep_head_html( $depheademail, $dephead, $depheadjob ) {
     return $depheadhtml;
 }
 
+function calculate_years_in_business_html( $numberstartyearofbuiness ) {
+    $numberofyearsinbusinesshtml = '';
+    $curyear = date('Y');
+    $yeardiff = $curyear - $numberstartyearofbuiness;
+    
+    if($yeardiff == 0){
+        $numberofyearsinbusinesshtml = '1 year in business';
+    }
+    else {
+        $numberofyearsinbusinesshtml = $yeardiff . ' years in business';
+    }
+    return $numberofyearsinbusinesshtml;
+}
 
 function bomanite_get_accordion_html() {
     $bomanite_landingpage = (get_option('bomanite_landingpage') != '') ? get_option('bomanite_landingpage') : 'empty';
@@ -77,7 +90,7 @@ function bomanite_get_accordion_html() {
         <h3 class="licenseesubhead"><?php echo $licenseesubhead ?></h3>
         <div class="row">
             <div class="grid-100 grid-container grid-parent">
-                <div class="grid-25">
+                <div class="grid-50">
                     <div id="bomanite_phone">
                         <h3>Phone</h3>
                         <div class="normallink"><a href="tel:1-<?php echo $phone ?>"><i class="fa fa-phone"></i><?php echo $phone ?></a></div>
@@ -86,21 +99,25 @@ function bomanite_get_accordion_html() {
                     </div>
                 </div>
 
-                <div class="grid-25">
+                <div class="grid-50">
                     <div id="bomanite_email">
                         <h3>Email</h3>
                         <div class="normallink"><a href="mailto:<?php echo $email ?>?cc=info@bomanite.com&subject=From%20Your%20Landing%20Page%20-%20I%20Need%20Info"><i class="fa fa-envelope-o"></i><?php echo $email ?></a></div>
                     </div>
                 </div>
+            </div>
+        </div>
 
-                <div class="grid-25">
+        <div class="row">
+            <div class="grid-100 grid-container grid-parent">
+                <div class="grid-50">
                     <div id="bomanite_website">
                         <h3>Website</h3>
                         <div class="normallink"><a href="http://<?php echo $website ?>" target="_blank"><i class="fa fa-laptop"></i><?php echo $website ?></a></div>
                     </div>
                 </div>
 
-                <div class="grid-25">
+                <div class="grid-50">
                     <div id="bomanite_mailing">
                         <h3>Mailing Address</h3>
                         <div><?php echo $mailingaddress ?></div>
@@ -119,28 +136,28 @@ function bomanite_get_accordion_html() {
                         <div class="normallink">
                             <?php 
                                 if($dephead1) {
-                                    echo build_dep_head_html( $dephead1email, $dephead1, $dephead1job );
+                                    echo create_dep_head_html( $dephead1email, $dephead1, $dephead1job );
                                 }
                                 if($dephead2) {
-                                    echo build_dep_head_html( $dephead2email, $dephead2, $dephead2job );
+                                    echo create_dep_head_html( $dephead2email, $dephead2, $dephead2job );
                                 }
                                 if($dephead3) {
-                                    echo build_dep_head_html( $dephead3email, $dephead3, $dephead3job );
+                                    echo create_dep_head_html( $dephead3email, $dephead3, $dephead3job );
                                 }
                                 if($dephead4) {
-                                    echo build_dep_head_html( $dephead4email, $dephead4, $dephead4job );
+                                    echo create_dep_head_html( $dephead4email, $dephead4, $dephead4job );
                                 }
                                 if($dephead5) {
-                                    echo build_dep_head_html( $dephead5email, $dephead5, $dephead5job );
+                                    echo create_dep_head_html( $dephead5email, $dephead5, $dephead5job );
                                 }
                                 if($dephead6) {
-                                    echo build_dep_head_html( $dephead6email, $dephead6, $dephead6job );
+                                    echo create_dep_head_html( $dephead6email, $dephead6, $dephead6job );
                                 }
                                 if($dephead7) {
-                                    echo build_dep_head_html( $dephead7email, $dephead7, $dephead7job );
+                                    echo create_dep_head_html( $dephead7email, $dephead7, $dephead7job );
                                 }
                                 if($dephead8) {
-                                    echo build_dep_head_html( $dephead8email, $dephead8, $dephead8job );
+                                    echo create_dep_head_html( $dephead8email, $dephead8, $dephead8job );
                                 }
                             ?>
 
@@ -212,7 +229,7 @@ function bomanite_get_accordion_html() {
                 <div class="grid-25">
                     <div id="bomanite_numberstartyearofbusiness">
                         <h3>Number of Years In Business</h3>
-                        <div><?php echo (date('Y')-($numberstartyearofbusiness)) . " years in business" ?></div>
+                        <div><?php echo calculate_years_in_business_html($numberstartyearofbusiness) ?></div>
                     </div>
                 </div>
 
