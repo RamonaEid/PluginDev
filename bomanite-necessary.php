@@ -3,7 +3,7 @@
 Plugin Name: Bomanite Plugin by Ramona Eid
 Plugin URI: http://www.checklistme.com/
 Description: Do NOT deactivate or delete.  Necessary plugin for Bomanite functionality.
-Version: 1.2.5
+Version: 1.4.1
 Author: Ramona Eid
 Author URI: http://www.checklistme.com/bio.html
 License: GPL2
@@ -35,7 +35,7 @@ function bomanite_init() {
     include( plugin_dir_path(__FILE__) . 'admin/bomanite-admin.php' );
     
     /*wp_register_script($id, $path, $dependencies, $version, $in_footer);*/
-    wp_register_script('bomanite-full', plugins_url('js/bomanite_full.js', __FILE__), array('jquery'), '012916', true );
+    wp_register_script('bomanite-full', plugins_url('js/bomanite_full.js', __FILE__), array('jquery'), '032516', true );
     wp_register_script( 'jquery-ui-accordion', '/wp-includes/js/jquery/ui/jquery.ui.accordion.min.js', array('jquery') );
 
     add_action( 'wp_enqueue_scripts', 'bomanite_enqueue_scripts' );
@@ -78,13 +78,13 @@ function bomanite_init() {
 
 function bomanite_enqueue_scripts() {
     wp_enqueue_style( 'jquery-style', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css' );
-    wp_enqueue_style( 'bomanite-accordion-style', plugins_url('css/bomanite_accordion.css', __FILE__) );
-    wp_enqueue_style( 'bomanite-admin-style', plugins_url('css/bomanite_admin.css', __FILE__) );
+    wp_enqueue_style( 'bomanite-accordion-style', plugins_url('css/bomanite_accordion.css', __FILE__), array(), '1.0.3' );
+    wp_enqueue_style( 'bomanite-admin-style', plugins_url('css/bomanite_admin.css', __FILE__), array(), '1.0.1' );
     //https://developer.wordpress.org/reference/functions/wp_enqueue_script/
     //wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer ); $handle(reuired) > all others optiuonal
     wp_enqueue_script( 'jquery-ui-accordion', array('jquery') );
     //wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer );
-    wp_enqueue_script( 'bomanite-full', plugins_url('js/bomanite_full.js', __FILE__), array('jquery'), '012916', true );
+    wp_enqueue_script( 'bomanite-full', plugins_url('js/bomanite_full.js', __FILE__), array('jquery'), '032516', true );
 
     $options = get_option( 'bomanite_landingpage' );
     $scriptData = array(
