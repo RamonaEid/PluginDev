@@ -7,7 +7,13 @@ function bomanite_get_accordion() {
     bomanite_get_accordion_html();
 }
 function bomanite_dynamic_content($content){
-    $content = bomanite_get_accordion() . $content;
+    // Yoast SEO the_content breaking issue
+    // see: https://pippinsplugins.com/playing-nice-with-the-content-filter/
+    // see: http://wordpress.stackexchange.com/questions/162747/the-content-and-is-main-query
+    // see: http://ibrokemywp.com/2015/06/16/beware-when-injecting-yourself-into-the-loop/
+    if( in_the_loop() ) {
+        $content = bomanite_get_accordion() . $content;
+    }
     return $content;
 }
 
