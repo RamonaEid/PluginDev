@@ -127,7 +127,7 @@ function bomanite_get_accordion_html() {
                 <div class="grid-50">
                     <div id="bomanite_phone">
                         <h3>Phone</h3>
-                        <div class="normallink"><a href="tel:1-<?php echo $phone ?>"><i class="fa fa-phone"></i><?php echo $phone ?></a></div>
+                        <div class="normallink"><a href="tel:1-<?php echo $phone ?>"><i class="fa fa-phone"></i> <?php echo $phone ?></a></div>
                         <h3>Fax</h3>
                         <div><?php echo $fax ?></div>
                     </div>
@@ -136,7 +136,7 @@ function bomanite_get_accordion_html() {
                 <div class="grid-50">
                     <div id="bomanite_email">
                         <h3>Email</h3>
-                        <div class="normallink"><a href="mailto:<?php echo $email ?>?cc=info@bomanite.com&subject=From%20Your%20Landing%20Page%20-%20I%20Need%20Info"><i class="fa fa-envelope-o"></i><?php echo $email ?></a></div>
+                        <div class="normallink"><a href="mailto:<?php echo $email ?>?cc=info@bomanite.com&subject=From%20Your%20Landing%20Page%20-%20I%20Need%20Info"><i class="fa fa-envelope-o"></i> <?php echo $email ?></a></div>
                     </div>
                 </div>
             </div>
@@ -147,7 +147,7 @@ function bomanite_get_accordion_html() {
                 <div class="grid-50">
                     <div id="bomanite_website">
                         <h3>Website</h3>
-                        <div class="normallink"><a href="http://<?php echo $website ?>" target="_blank"><i class="fa fa-laptop"></i><?php echo $website ?></a></div>
+                        <div class="normallink"><a href="http://<?php echo $website ?>" target="_blank"><i class="fa fa-laptop"></i> <?php echo $website ?></a></div>
                     </div>
                 </div>
 
