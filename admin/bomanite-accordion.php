@@ -300,7 +300,7 @@ function bomanite_get_accordion_html() {
 
                     <?php if ( $onsiteshowroom !== 'No' ) : ?>
                     <div id="bomanite_aiaaccreditedshowroom">
-                        <h3>AIA accredited Design Center</h3>
+                        <h3>AIA accredited Design Center Tour</h3>
                         <div><?php echo $aiaaccreditedshowroom ?></div>
                     </div>
 
