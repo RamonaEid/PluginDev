@@ -3,7 +3,7 @@
 Plugin Name: Bomanite Plugin by Ramona Eid
 Plugin URI: http://www.checklistme.com/
 Description: Do NOT deactivate or delete.  Necessary plugin for Bomanite functionality.
-Version: 1.4.4
+Version: 1.4.5
 Author: Ramona Eid
 Author URI: http://www.checklistme.com/bio.html
 License: GPL2
@@ -49,6 +49,8 @@ function bomanite_init() {
 
     add_action( 'admin_enqueue_scripts', 'bomanite_enqueue_scripts' );
     add_action( 'login_enqueue_scripts', 'bomanite_enqueue_scripts' );
+
+    add_filter('upload_mimes', 'custom_upload_mimes');
 
     include_once( 'github-plugin-updater/updater.php' );
 

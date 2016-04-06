@@ -38,6 +38,12 @@ function bomanite_jason_variables() {
 <?php
 }
 
+function custom_upload_mimes ( $existing_mimes=array() ) {
+	// add your extension to the array
+	$existing_mimes['vcf'] = 'text/x-vcard';
+	return $existing_mimes;
+}
+
 
 
 function bomanite_custom_select_options(){
