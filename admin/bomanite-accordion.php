@@ -131,6 +131,12 @@ function bomanite_get_accordion_html() {
         $showroomhours = $custom_fields['custom_showroomhours'][0];
         $otherinfo = $custom_fields['custom_otherinfo'][0];
         $showroomaddress = $custom_fields['custom_showroomaddress'][0];
+        $unions = $custom_fields['custom_unions'][0];
+        $contractorlicensenumbers = $custom_fields['custom_contractorlicensenumbers'][0];
+        $bomanitelicenseesince = $custom_fields['custom_bomanitelicenseesince'][0];
+        $leedaccredited = $custom_fields['custom_leedaccredited'][0];
+        $minprojectsize = $custom_fields['custom_minprojectsize'][0];
+        $typeofwork = $custom_fields['custom_typeofwork'][0];
 ?>
         <!--<p><?php echo '$bomanite_landingpage: ' . $bomanite_landingpage ?></p>-->
         <h3 class="licenseesubhead"><?php echo create_licensee_subhead_html($licenseesubhead); ?></h3>
@@ -298,6 +304,56 @@ function bomanite_get_accordion_html() {
                     <div id="bomanite_keyemployeesandqualifications">
                         <h3>Key Employees and Qualifications</h3>
                         <div><?php echo $keyemployeesandqualifications ?></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="grid-100 grid-container grid-parent">
+                <div class="grid-33">
+                    <div id="bomanite_unions">
+                        <h3>Union Affiliations</h3>
+                        <div><?php echo $unions ?></div>
+                    </div>
+                </div>
+
+                <div class="grid-33">
+                    <div id="bomanite_contractorlicensenumbers">
+                        <h3>Contractor License Number</h3>
+                        <div><?php echo $contractorlicensenumbers ?></div>
+                    </div>
+                </div>
+
+                <div class="grid-33">
+                    <div id="bomanite_bomanitelicenseesince">
+                        <h3>Bomanite Licensee since</h3>
+                        <div><?php echo $bomanitelicenseesince ?></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="grid-100 grid-container grid-parent">
+                <div class="grid-33">
+                    <div id="bomanite_leedaccredited">
+                        <h3>LEED accredited staff</h3>
+                        <div><?php echo $leedaccredited ?></div>
+                    </div>
+                </div>
+
+                <div class="grid-33">
+                    <div id="bomanite_minprojectsize">
+                        <h3>Minimum project size</h3>
+                        <div><?php echo $minprojectsize ?></div>
+                    </div>
+                </div>
+
+                <div class="grid-33">
+                    <div id="bomanite_typeofwork">
+                        <h3>Type of work installed</h3>
+                        <div><?php echo $typeofwork ?></div>
                     </div>
                 </div>
             </div>

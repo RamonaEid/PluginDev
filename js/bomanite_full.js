@@ -35,7 +35,13 @@ jQuery(document).ready(function ($) {
             '#bomanite_samplesanddisplaysviewable',
             '#bomanite_showroomhours',
             '#bomanite_otherinfo',
-            '#bomanite_showroomaddress'
+            '#bomanite_showroomaddress',
+            '#bomanite_unions',
+            '#bomanite_contractorlicensenumbers',
+            '#bomanite_bomanitelicenseesince',
+            '#bomanite_leedaccredited',
+            '#bomanite_minprojectsize',
+            '#bomanite_typeofwork'
         ];
         var nonwebsites = [
             'Bomanite of Oklahoma',

@@ -109,7 +109,13 @@ function bomanite_custom_select_options(){
         'custom_samplesanddisplaysviewable',
         'custom_showroomhours',
         'custom_otherinfo',
-        'custom_showroomaddress'
+        'custom_showroomaddress',
+        'custom_unions',
+        'custom_contractorlicensenumbers',
+        'custom_bomanitelicenseesince',
+        'custom_leedaccredited',
+        'custom_minprojectsize',
+        'custom_typeofwork'
     ];
     jQuery.each(customfields, function (i) {
         if (jQuery("#title").val() != landingPageTitle) {
