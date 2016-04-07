@@ -91,6 +91,7 @@ function bomanite_custom_select_options(){
         'custom_licenseesubhead',
         'custom_mailingaddress',
         'custom_phone',
+        'custom_phone2',
         'custom_qualification',
         'custom_services',
         'custom_shippingaddress',

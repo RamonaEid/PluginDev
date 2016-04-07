@@ -39,6 +39,17 @@ function create_licensee_subhead_html($licenseesubhead) {
     return $licenseesubheadhtml;
 }
 
+function create_phone2_html( $phone2 ) {
+    $phone2html = '';
+    if($phone2 == 'na') {
+        $phone2html = $phone2;
+    }
+    else {
+        $phone2html = '<div class="normallink"><a href="tel:1-' . $phone2 . '<i class="fa fa-phone"></i> ' . $phone2 . '</a></div>' ;
+    }
+    return $phone2html;
+}
+
 function create_dep_head_html( $depheademail, $dephead, $depheadjob ) {
     $depheadhtml = '';
     if($depheademail){
@@ -73,6 +84,7 @@ function bomanite_get_accordion_html() {
         $custom_fields = get_post_custom( $post->ID );
         $licenseesubhead = $custom_fields['custom_licenseesubhead'][0];
         $phone = $custom_fields['custom_phone'][0];
+        $phone2 = $custom_fields['custom_phone2'][0];
         $fax = $custom_fields['custom_fax'][0];
         $email = $custom_fields['custom_email'][0];
         $website = $custom_fields['custom_website'][0];
@@ -128,6 +140,8 @@ function bomanite_get_accordion_html() {
                     <div id="bomanite_phone">
                         <h3>Phone</h3>
                         <div class="normallink"><a href="tel:1-<?php echo $phone ?>"><i class="fa fa-phone"></i> <?php echo $phone ?></a></div>
+                        <h3>Other Phone</h3>
+                        <div><?php echo create_phone2_html($phone2); ?></div>
                         <h3>Fax</h3>
                         <div><?php echo $fax ?></div>
                     </div>
@@ -244,7 +258,7 @@ function bomanite_get_accordion_html() {
 
                 <div class="grid-25">
                     <div id="bomanite_continuingeducation">
-                        <h3>Continuing Education Unit Presentations</h3>
+                        <h3>Continuing Education Presentations</h3>
                         <div><?php echo $continuingeducation ?></div>
                     </div>
                 </div>
@@ -300,7 +314,7 @@ function bomanite_get_accordion_html() {
 
                     <?php if ( $onsiteshowroom !== 'No' ) : ?>
                     <div id="bomanite_aiaaccreditedshowroom">
-                        <h3>AIA accredited Design Center Tour</h3>
+                        <h3>AIA CES Registered Design Center Tour</h3>
                         <div><?php echo $aiaaccreditedshowroom ?></div>
                     </div>
 
