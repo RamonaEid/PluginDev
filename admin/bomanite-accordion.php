@@ -41,12 +41,12 @@ function create_licensee_subhead_html($licenseesubhead) {
 
 function create_phone2_html( $phone2 ) {
     $phone2html = '';
-    if($phone2 == 'na') {
-        $phone2html = $phone2;
+    if($phone2 != 'na') {
+        $phone2html = '<h3>Other Phone</h3><div class="normallink"><a href="tel:1-' . $phone2 . '"><i class="fa fa-phone"></i> ' . $phone2 . '</a></div>';
     }
-    else {
-        $phone2html = '<div class="normallink"><a href="tel:1-' . $phone2 . '<i class="fa fa-phone"></i> ' . $phone2 . '</a></div>' ;
-    }
+    //else {
+    //    $phone2html = '<div class="normallink"><a href="tel:1-' . $phone2 . '<i class="fa fa-phone"></i> ' . $phone2 . '</a></div>' ;
+    //}
     return $phone2html;
 }
 
@@ -140,8 +140,7 @@ function bomanite_get_accordion_html() {
                     <div id="bomanite_phone">
                         <h3>Phone</h3>
                         <div class="normallink"><a href="tel:1-<?php echo $phone ?>"><i class="fa fa-phone"></i> <?php echo $phone ?></a></div>
-                        <h3>Other Phone</h3>
-                        <div><?php echo create_phone2_html($phone2); ?></div>
+                        <?php echo create_phone2_html($phone2); ?>
                         <h3>Fax</h3>
                         <div><?php echo $fax ?></div>
                     </div>
