@@ -62,7 +62,8 @@ jQuery(document).ready(function ($) {
         if (omitwebsite) {
             networkHTML += '<h3 class="network">This MicroSite is part of the Bomanite<sup>®</sup> Dealer Network</h3>';
         } else {
-            var website = jQuery('#bomanite_website a').text();
+            // removes space after awesome font icon before website
+            var website = jQuery('#bomanite_website a').text().substr(1);
             networkHTML += '<h3 class="network">This MicroSite is part of the Bomanite<sup>®</sup> Dealer Network and not the Offical Website of the Licensee</h3>';
             networkHTML += '<h3 class="network">Offical Licensee Website: <a href="http://' + website + '" target="_blank">' + website + '</a></h3>';
         }
