@@ -30,18 +30,18 @@ jQuery(document).ready(function ($) {
             '#bomanite_bomanitelicensee',
             '#bomanite_numberofemployees',
             '#bomanite_keyemployeesandqualifications',
-            '#bomanite_onsiteshowroom',
-            '#bomanite_aiaaccreditedshowroom',
-            '#bomanite_samplesanddisplaysviewable',
-            '#bomanite_showroomhours',
-            '#bomanite_otherinfo',
-            '#bomanite_showroomaddress',
             '#bomanite_unions',
             '#bomanite_contractorlicensenumbers',
             '#bomanite_bomanitelicenseesince',
             '#bomanite_leedaccredited',
             '#bomanite_minprojectsize',
-            '#bomanite_typeofwork'
+            '#bomanite_typeofwork',
+            '#bomanite_onsiteshowroom',
+            '#bomanite_aiaaccreditedshowroom',
+            '#bomanite_samplesanddisplaysviewable',
+            '#bomanite_showroomhours',
+            '#bomanite_otherinfo',
+            '#bomanite_showroomaddress'
         ];
         var nonwebsites = [
             'Bomanite of Oklahoma',
@@ -62,8 +62,8 @@ jQuery(document).ready(function ($) {
         if (omitwebsite) {
             networkHTML += '<h3 class="network">This MicroSite is part of the Bomanite<sup>®</sup> Dealer Network</h3>';
         } else {
-            // removes space after awesome font icon before website
-            var website = jQuery('#bomanite_website a').text().substr(1);
+            // remove leading and trailing spaces
+            var website = jQuery.trim(jQuery('#bomanite_website a').text());
             networkHTML += '<h3 class="network">This MicroSite is part of the Bomanite<sup>®</sup> Dealer Network and not the Offical Website of the Licensee</h3>';
             networkHTML += '<h3 class="network">Offical Licensee Website: <a href="http://' + website + '" target="_blank">' + website + '</a></h3>';
         }
