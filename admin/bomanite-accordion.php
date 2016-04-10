@@ -247,28 +247,32 @@ function bomanite_get_accordion_html() {
 
         <div class="row">
             <div class="grid-100 grid-container grid-parent">
-                <div class="grid-25">
+                <div class="grid-50">
                     <div id="bomanite_samplepolicy">
                         <h3>Sample Policy</h3>
                         <div><?php echo $samplepolicy ?></div>
                     </div>
                 </div>
 
-                <div class="grid-25">
+                <div class="grid-50">
                     <div id="bomanite_freeestimates">
                         <h3>Free Estimates</h3>
                         <div><?php echo $freeestimates ?></div>
                     </div>
                 </div>
+            </div>
+        </div>
 
-                <div class="grid-25">
+        <div class="row">
+            <div class="grid-100 grid-container grid-parent">
+                <div class="grid-50">
                     <div id="bomanite_continuingeducation">
                         <h3>Continuing Education Presentations</h3>
                         <div><?php echo $continuingeducation ?></div>
                     </div>
                 </div>
 
-                <div class="grid-25">
+                <div class="grid-50">
                     <div id="bomanite_geographicservicearea">
                         <h3>Geographic Service Area</h3>
                         <div><?php echo $geographicservicearea ?></div>
@@ -279,28 +283,32 @@ function bomanite_get_accordion_html() {
 
         <div class="row">
             <div class="grid-100 grid-container grid-parent">
-                <div class="grid-25">
+                <div class="grid-50">
                     <div id="bomanite_numberstartyearofbusiness">
                         <h3>Number of Years In Business</h3>
                         <div><?php echo calculate_years_in_business_html($numberstartyearofbusiness) ?></div>
                     </div>
                 </div>
 
-                <div class="grid-25">
+                <div class="grid-50">
                     <div id="bomanite_numberofemployees">
                         <h3>Number of Employees</h3>
                         <div><?php echo $numberofemployees ?></div>
                     </div>
                 </div>
+            </div>
+        </div>
 
-                <div class="grid-25">
+        <div class="row">
+            <div class="grid-100 grid-container grid-parent">
+                <div class="grid-50">
                     <div id="bomanite_bomanitelicensee">
                         <h3>Bomanite Licensee</h3>
                         <div><?php echo $bomanitelicensee ?></div>
                     </div>
                 </div>
 
-                <div class="grid-25">
+                <div class="grid-50">
                     <div id="bomanite_keyemployeesandqualifications">
                         <h3>Key Employees and Qualifications</h3>
                         <div><?php echo $keyemployeesandqualifications ?></div>
