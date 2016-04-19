@@ -45,6 +45,7 @@ jQuery(document).ready(function ($) {
         ];
         var nonwebsites = [
             'Bomanite of Oklahoma',
+            'Bomanite of Atlanta',
             'whatever'
         ];
         var omitwebsite = false;
