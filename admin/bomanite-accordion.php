@@ -63,16 +63,23 @@ function create_dep_head_html( $depheademail, $dephead, $depheadjob ) {
 }
 
 function calculate_years_in_business_html( $numberstartyearofbuiness ) {
-    $numberofyearsinbusinesshtml = '';
-    $curyear = date('Y');
-    $yeardiff = $curyear - $numberstartyearofbuiness;
-    
-    if($yeardiff == 0){
-        $numberofyearsinbusinesshtml = '1 year in business';
+    if($numberstartyearofbuiness != 'na') {
+        $numberofyearsinbusinesshtml = '';
+        $curyear = date('Y');
+        
+        $yeardiff = $curyear - $numberstartyearofbuiness;
+        if($yeardiff == 0){
+            $numberofyearsinbusinesshtml = '1 year in business';
+        }
+        else {
+            $numberofyearsinbusinesshtml = $yeardiff . ' years in business';
+        }
     }
     else {
-        $numberofyearsinbusinesshtml = $yeardiff . ' years in business';
+        $numberofyearsinbusinesshtml = $numberstartyearofbuiness;
     }
+    
+    
     return $numberofyearsinbusinesshtml;
 }
 
