@@ -52,6 +52,7 @@ jQuery(document).ready(function ($) {
         var nonwebsites = [
             'Bomanite of Oklahoma',
             'Bomanite of Atlanta',
+            'Shepherd\'s Construction Company, Inc.',
             'whatever'
         ];
         var omitwebsite = false;
