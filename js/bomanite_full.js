@@ -7,7 +7,13 @@ jQuery(document).ready(function ($) {
         Supporter: 'Tara Dunn'
     }
 
-    if (jQuery('h1.entry-title').text() === bomanite_options.landingpage) {
+    var cleantitle = encodeURI(jQuery('h1.entry-title').text()).replace(/%E2%80%99/g, "");
+    cleantitle = decodeURI(cleantitle);
+    var bomaniteOptionsLandingpage = bomanite_options.landingpage;
+    bomaniteOptionsLandingpage = bomaniteOptionsLandingpage.replace(/'/g, "");
+
+    //jQuery('h1.entry-title').text() === bomanite_options.landingpage
+    if (cleantitle === bomaniteOptionsLandingpage) {
         var headerIcon = "ui-icon-plus";
         var activeHeaderIcon = "ui-icon-minus";
         var accordion;
