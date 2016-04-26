@@ -48,6 +48,7 @@ jQuery(document).ready(function ($) {
                 'Bomanite of Oklahoma',
                 'Bomanite of Atlanta',
                 'Shepherd\'s Construction Company, Inc.',
+                'Bastian Concrete Construction, LLC',
                 'whatever'
             ];
             var omitwebsite = false;
