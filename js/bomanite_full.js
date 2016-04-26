@@ -7,7 +7,7 @@ jQuery(document).ready(function ($) {
         Supporter: 'Tara Dunn'
     }
 
-    if (bomanite_options.pagetitle) {
+    if (bomanite_options.pagetitle && bomanite_options.landingpage) {
         if (bomanite_options.landingpage.replace(/'/g, "") === bomanite_options.pagetitle.replace(/'/g, "")) {
             var headerIcon = "ui-icon-plus";
             var activeHeaderIcon = "ui-icon-minus";

@@ -27,16 +27,6 @@ function bomanite_check_unsemantic() {
     }
 }
 
-function bomanite_jason_variables() {
-    $bomanite_landingpage = get_option('bomanite_landingpage'); ?>
-    <script>
-        var bomanite = <?php echo json_encode( array( 
-         'landingpage' => $bomanite_landingpage
-       ) ); ?>;
-
-    </script>
-<?php
-}
 
 function custom_upload_mimes ( $existing_mimes=array() ) {
 	// add your extension to the array
