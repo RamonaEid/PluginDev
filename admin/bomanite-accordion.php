@@ -39,6 +39,117 @@ function create_licensee_subhead_html($licenseesubhead) {
     return $licenseesubheadhtml;
 }
 
+function create_licensee_finishes_html($licenseesubhead) {
+    $finisheshtml = '';
+
+    $divbegin = '<div id="finishes">';
+    $divend = '</div>';
+
+    $gridparentbegin = '<div class="grid-100 grid-container grid-parent finishes">';
+    $gridparentend = '</div>';
+
+    
+    $finishesheader = '';
+    $listhtml = '';
+    $cols = '';
+    
+    $licenseesubhead = explode(',', $licenseesubhead);
+
+    foreach ( $licenseesubhead as $system ) {
+        switch ($system){
+            case 'EXPOSED AGGREGATE':
+                $finishesheader = create_finishesheader('Bomanite Exposed Aggregate Systems Finishes Offered');
+                // List
+                $listhtml = create_li_items( 'Bomanite Sandscape - uniformly exposed concrete sands and small aggregate colored concrete' );
+                $listhtml .= create_li_items( 'Bomanite Alloy - lightly exposed broadcast or seeded aggregates in color hardened colored concrete, imbedding and fully adhering materials and concrete together, including glass or stone or other ceramic based materials' );
+                $cols = create_finishescolumn( create_ul_list( $listhtml ) );
+                $listhtml = create_li_items( 'Bomanite Antico - aged and pitted concrete finish achieved using Dry-Etch surface etching and retarding granules' );
+                $listhtml .= create_li_items( 'Bomanite Sandscape Refined - lightly exposed color hardened colored concrete' );
+                $cols .= create_finishescolumn( create_ul_list( $listhtml ) );
+                $listhtml = create_li_items( 'Bomanite Revealed - exposed aggregates including glass or stone or other ceramic based materials encapsulated in an colored engineered cementitious concrete mix applied to either fully cured concrete or concrete while in the plastic state' );
+                $cols .= create_finishescolumn( create_ul_list( $listhtml ) );
+                break;
+            case 'GRASSCRETE':
+                $finishesheader = create_finishesheader('Bomanite Pervious Concrete Systems Finishes Offered');
+                // List
+                $listhtml = create_li_items( 'Bomanite Grasscrete - void structured porous and permeable paving surfaces constructed using novel bio-degradable concrete forms with poured in place concrete resulting in structural drivable grass or stone surfaces - a plantable concrete pavement system' );
+                // This one doesnt have columns, just ONE list
+                $cols = create_ul_list( $listhtml );
+                //$cols = create_finishescolumn( $listhtml );
+                //$cols .= create_finishescolumn( $listhtml );
+                //$cols .= create_finishescolumn( $listhtml );
+                break;
+            case 'IMPRINT':
+                $finishesheader = create_finishesheader('Bomanite Imprint Systems Finishes Offered');
+                // List
+                $listhtml = create_li_items( 'Bomanite Bomacron - pattern and texture stamped colored concrete with a variety of textures cast from real stone, brick, tile, wood' );
+                $listhtml .= create_li_items( 'Bomanite - original pattern stamped colored concrete' );
+                $cols = create_finishescolumn( create_ul_list( $listhtml ) );
+                $listhtml = create_li_items( 'Sealed and coated concrete - acrylic, silicone, siloxane, silane, polyurethane, Polyaspartic, fluorinated acrylic, lithium silicate in a variety of water based and solvent based carriers' );
+                $listhtml .= create_li_items( 'Colored concrete - broom, swirl, float and trowel (smooth) finished ' );
+                $cols .= create_finishescolumn( create_ul_list( $listhtml ) );
+                $listhtml = create_li_items( 'Bomanite Patene Artectura - acid stained, silicate stained, pigment dispersion stained and metal complex acid dyed concrete' );
+                $listhtml .= create_li_items( 'Stenciled Concrete - patterned and colored concrete with surface applied troweled rubber graphics or paper stencils' );
+                $cols .= create_finishescolumn( create_ul_list( $listhtml ) );
+                break;
+            case 'POLISHING':
+                $finishesheader = create_finishesheader('Bomanite Custom Polishing Systems Finishes Offered');
+                // List
+                $listhtml = create_li_items( 'Bomanite Renaissance - ground and diamond-polished integrally colored concrete that utilizes penetrating lithium silicate treatment' );
+                $listhtml .= create_li_items( 'Bomanite Patene Teres - ground and polished dyed concrete that utilizes penetrating lithium silicate treatment' );
+                $cols = create_finishescolumn( create_ul_list( $listhtml ) );
+                $listhtml = create_li_items( 'Bomanite VitraFlor - ground and polished un-colored concrete that utilizes penetrating lithium silicate treatment in variety of paste or cream polished through deep grind looks' );
+                $listhtml .= create_li_items( 'Bomanite Belcolore - ground and polished color hardened colored concrete that utilizes penetrating lithium silicate treatment' );
+                $cols .= create_finishescolumn( create_ul_list( $listhtml ) );
+                $listhtml = create_li_items( 'Bomanite Modena - hydraulic cement-based, self-leveling or trowel down aggregate containing topping based on rapid-hardening (rapid set) calcium sulfoaluminate (CSA) cement polished an treated with colloidal silica compounds' );
+                $cols .= create_finishescolumn( create_ul_list( $listhtml ) );
+                break;
+            case 'TOPPINGS':
+                $finishesheader = create_finishesheader('Bomanite Toppings Systems Finishes Offered');
+                // List
+                $listhtml = create_li_items( 'Bomanite Micro-Top - trowel applied cement based thin veneer type colored microtopping' );
+                $listhtml .= create_li_items( 'Bomanite Thinset - trowel applied stampable concrete colored topping' );
+                $listhtml .= create_li_items( 'Bomanite Micro-Top XT - exterior grade trowel or spray applied, splatter or knockdown cement based thin veneer type colored microtopping' );
+                $cols = create_finishescolumn( create_ul_list( $listhtml ) );
+                $listhtml = create_li_items( 'Self Leveling Toppings - hydraulic cement-based, self-leveling topping, resurfacer and underlayment based on rapid-hardening (rapid set) calcium sulfoaluminate (CSA) cement' );
+                $listhtml .= create_li_items( 'Repair Mortars and Toppings - high-performance, fast-setting (rapid-set) or standard-setting, multi-purpose concrete repair and patching compounds' );
+                $listhtml .= create_li_items( 'Bomanite Broadcast Aggregate and Broadcast Flake Flooring - high performance coatings based on epoxy, polyurethane and polyaspartic chemistry' );
+                $cols .= create_finishescolumn( create_ul_list( $listhtml ) );
+                $listhtml = create_li_items( 'Sealed and coated concrete - acrylic, silicone, siloxane, silane, polyurethane, Polyaspartic, fluorinated acrylic, lithium silicate in a variety of water based and solvent based carriers' );
+                $listhtml .= create_li_items( 'Bomanite Patene Artectura - acid stained, silicate stained, pigment dispersion stained and metal complex acid dyed concrete' );
+                $listhtml .= create_li_items( 'Bomanite Florspartic 100 - two-part polyaspartic aliphatic polyurea sealer/finish concrete coating clear or pigmented' );
+                $cols .= create_finishescolumn( create_ul_list( $listhtml ) );
+                break;
+        }
+
+        //$licenseesubheadhtml = $licenseesubheadhtml . $dividbegin . $divid . $finishesheader . $listhtml . $dividend;
+        $finisheshtml = $finisheshtml . $gridparentbegin . $finishesheader . $cols . $gridparentend;
+
+    }
+
+    // Wrap whole thing in a DIV to be styled
+    $finisheshtml = $divbegin . $finisheshtml . $divend;
+
+    return $finisheshtml;
+}
+function create_finishesheader( $systemname ){
+    $systemname = '<h3>' . $systemname . '</h3>';
+    return $systemname;
+}
+function create_li_items( $listhtml ){
+    $listhtml = '<li>' . $listhtml . '</li>';
+    return $listhtml;
+}
+function create_ul_list ( $listhtml ){
+    $listhtml = '<ul>' . $listhtml . '</ul>';
+    return $listhtml;
+}
+function create_finishescolumn( $htmllist ){
+    $htmllist = '<div class="grid-33">' . $htmllist . '</div>';
+    return $htmllist;
+}
+
+
 function create_phone2_html( $phone2 ) {
     $phone2html = '';
     if($phone2 != 'na') {
@@ -413,6 +524,8 @@ function bomanite_get_accordion_html() {
                 </div>
             </div>
         </div>
+
+        <?php echo create_licensee_finishes_html($licenseesubhead); ?>
 
     <?php endif; ?>
 
