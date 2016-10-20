@@ -95,7 +95,8 @@ input[type="button"].blu {
 .finishes {
     margin-bottom: 20px !important;
 }
-.finishes h3, h4 {
+.finishes h3, 
+.finishes h4 {
     border-bottom: 1px solid black;
 }
 
