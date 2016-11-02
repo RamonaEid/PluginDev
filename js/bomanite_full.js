@@ -49,6 +49,7 @@ jQuery(document).ready(function ($) {
                 'Bomanite of Atlanta',
                 'Shepherd\'s Construction Company, Inc.',
                 'Bastian Concrete Construction, LLC',
+                'Connecticut Bomanite Systems',
                 'whatever'
             ];
             var omitwebsite = false;
