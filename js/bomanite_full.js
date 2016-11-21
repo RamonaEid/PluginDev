@@ -50,6 +50,7 @@ jQuery(document).ready(function ($) {
                 'Shepherd\'s Construction Company, Inc.',
                 'Bastian Concrete Construction, LLC',
                 'Connecticut Bomanite Systems',
+                'Bomanite New England',
                 'whatever'
             ];
             var omitwebsite = false;
