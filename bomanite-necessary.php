@@ -26,7 +26,7 @@ along with Bomanite Plugin. If not, see https://www.gnu.org/licenses/gpl-2.0.htm
  */
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
-define( 'BOMANITE_VERSION', '1.4.24' );
+define( 'BOMANITE_VERSION', '1.4.25' );
 
 add_action( 'init', 'bomanite_init' );
 

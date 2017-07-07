@@ -164,7 +164,7 @@ function create_phone2_html( $phone2 ) {
 function create_dep_head_html( $depheademail, $dephead, $depheadjob ) {
     $depheadhtml = '';
     if($depheademail){
-        $curemail = '   <a href="mailto:' . $depheademail . '?cc=info@bomanite.com&subject=From%20Your%20Landing%20Page%20-%20I%20Need%20Info">' . $depheademail . '</a>';
+        $curemail = '   <a href="mailto:' . $depheademail . '?cc=imagine@bomanite.com&subject=From%20Your%20Landing%20Page%20-%20I%20Need%20Info">' . $depheademail . '</a>';
     }
     else {
         $curemail = '';
@@ -273,7 +273,7 @@ function bomanite_get_accordion_html() {
                 <div class="grid-50">
                     <div id="bomanite_email">
                         <h3>Email</h3>
-                        <div class="normallink"><a href="mailto:<?php echo $email ?>?cc=info@bomanite.com&subject=From%20Your%20Landing%20Page%20-%20I%20Need%20Info"><i class="fa fa-envelope-o"></i> <?php echo $email ?></a></div>
+                        <div class="normallink"><a href="mailto:<?php echo $email ?>?cc=imagine@bomanite.com&subject=From%20Your%20Landing%20Page%20-%20I%20Need%20Info"><i class="fa fa-envelope-o"></i> <?php echo $email ?></a></div>
                     </div>
                 </div>
             </div>
