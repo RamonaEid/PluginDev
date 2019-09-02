@@ -137,5 +137,15 @@ jQuery(document).ready(function ($) {
             jQuery(this).hide();
         }
     });
+    //https://stackoverflow.com/questions/39020871/anchor-tag-in-drop-down
+    var galleryDropdown = document.getElementById("galleryDropdown");
+    if (galleryDropdown) {
+        galleryDropdown.onchange = function() {
+            if (this.selectedIndex !== 0) {
+                window.location.href = this.value;
+                this.selectedIndex = 0;
+            }
+        };
+    }
 
 });
