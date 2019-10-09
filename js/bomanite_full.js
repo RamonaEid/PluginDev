@@ -128,6 +128,7 @@ jQuery(document).ready(function ($) {
             // Accessibility of hidden H3
             $.each(jQuery('div.hidden-accordion h3'), function (i) {
                 jQuery(this).attr('aria-hidden', true);
+                jQuery(this).append('<span class="sr-only">Screen Reader</span>')
             });
 
         }
