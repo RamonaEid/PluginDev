@@ -125,6 +125,11 @@ jQuery(document).ready(function ($) {
                 }
             });
 
+            // Accessibility of hidden H3
+            $.each(jQuery('div.hidden-accordion h3'), function (i) {
+                jQuery(this).attr('aria-hidden', true);
+            });
+
         }
     }
 
@@ -147,5 +152,31 @@ jQuery(document).ready(function ($) {
             }
         };
     }
+
+    // Accessibility of menu fontawesome icons
+    $.each(jQuery('li.menu-item a i'), function (i) {
+        if(jQuery(this).hasClass('ramona-facebook')) {
+            jQuery(this).parent('a').attr('aria-label', 'Open Facebook in another tab.');
+        } else if(jQuery(this).hasClass('ramona-twitter')) {
+            jQuery(this).parent('a').attr('aria-label', 'Open Twitter in another tab.');
+        } else if(jQuery(this).hasClass('ramona-houzz')) {
+            jQuery(this).parent('a').attr('aria-label', 'Open Houzz in another tab.');
+        } else if(jQuery(this).hasClass('ramona-pinterest')) {
+            jQuery(this).parent('a').attr('aria-label', 'Open Pinterest in another tab.');
+        } else if(jQuery(this).hasClass('ramona-instagram')) {
+            jQuery(this).parent('a').attr('aria-label', 'Open Instagram in another tab.');
+        } else if(jQuery(this).hasClass('ramona-youtube')) {
+            jQuery(this).parent('a').attr('aria-label', 'Open YouTube in another tab.');
+        } else if(jQuery(this).hasClass('ramona-yelp')) {
+            jQuery(this).parent('a').attr('aria-label', 'Open Yelp in another tab.');
+        } else if(jQuery(this).hasClass('ramona-linkedin')) {
+            jQuery(this).parent('a').attr('aria-label', 'Open LinkedIn in another tab.');
+        }  else if(jQuery(this).hasClass('ramona-blogspot')) {
+            jQuery(this).parent('a').attr('aria-label', 'Open Blogspot in another tab.');
+        } else {
+            // do nothing
+        }
+
+    });
 
 });
