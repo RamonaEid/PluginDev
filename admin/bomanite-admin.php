@@ -18,6 +18,7 @@ function bomanite_dynamic_content($content){
 }
 
 function bomanite_check_unsemantic() {
+    // TODO: may need to refactor this
     global $wp_styles;
     $srcs = array_map('basename', (array) wp_list_pluck($wp_styles->registered, 'src') );
     if ( in_array('unsemantic-grid.min.css', $srcs) || in_array('unsemantic-grid.css', $srcs) ) {
@@ -37,6 +38,7 @@ function custom_upload_mimes ( $existing_mimes=array() ) {
 
 
 function bomanite_custom_select_options(){
+    // TODO: Refactor this
     if ( ! isset ( $GLOBALS['post'] ) )
         return;
 
