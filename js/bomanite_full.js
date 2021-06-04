@@ -9,7 +9,11 @@ jQuery(document).ready(function ($) {
 
     // On HomePage correct Google Maps Easy AutoScroll to Map - milliseconds
     if (window.location.pathname === '/') {
-        setTimeout(function() {window.scrollTo(0, 0);},5000);
+        setTimeout(function() {window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });},5000);
     }
 
     if (bomanite_options.pagetitle && bomanite_options.landingpage) {
