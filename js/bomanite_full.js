@@ -7,6 +7,11 @@ jQuery(document).ready(function ($) {
         Supporter: 'Tara Kincade'
     }
 
+    // On HomePage correct Google Maps Easy AutoScroll to Map - milliseconds
+    if (window.location.pathname === '/') {
+        setTimeout(function() {window.scrollTo(0, 0);},5000);
+    }
+
     if (bomanite_options.pagetitle && bomanite_options.landingpage) {
         if (bomanite_options.landingpage.replace(/'/g, "") === bomanite_options.pagetitle.replace(/'/g, "")) {
             var headerIcon = "ui-icon-plus";
