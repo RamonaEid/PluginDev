@@ -7,15 +7,15 @@ jQuery(document).ready(function ($) {
         Supporter: 'Tara Kincade'
     }
 
-    // On HomePage correct Google Maps Easy AutoScroll to Map - milliseconds
-    if (window.location.pathname === '/') {
-        //https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollTo#examples
-        setTimeout(function() {window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: 'smooth'
-        });},3700);
-    }
+    // On HomePage correct Google Maps Easy AutoScroll to Map - 3700 milliseconds
+    // if (window.location.pathname === '/') {
+    //     //https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollTo#examples
+    //     setTimeout(function() {window.scrollTo({
+    //         top: 0,
+    //         left: 0,
+    //         behavior: 'smooth'
+    //     });},3700);
+    // }
 
     if (bomanite_options.pagetitle && bomanite_options.landingpage) {
         if (bomanite_options.landingpage.replace(/'/g, "") === bomanite_options.pagetitle.replace(/'/g, "")) {
