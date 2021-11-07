@@ -117,7 +117,8 @@ div.morph img {
 }
 
     img.morph:hover,
-    div.morph img:hover {
+    div.morph img:hover,
+    div.gb-inside-container:hover > div.morph img {
         border-radius: 50%;
         opacity: 0.6;
         -webkit-transform: rotate(360deg);
