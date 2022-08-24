@@ -24,6 +24,7 @@ jQuery(document).ready(function ($) {
             var accordion;
             var head;
             var content;
+            var website = jQuery.trim(jQuery('#bomanite_website a').text());
             var ids = [
                 '#bomanite_phone',
                 '#bomanite_email',
@@ -60,6 +61,8 @@ jQuery(document).ready(function ($) {
                 'Shepherd\'s Construction Company, Inc.',
                 'Bastian Concrete Construction, LLC',
                 'Connecticut Bomanite Systems',
+                'Minnesota',
+                'Maryland',
                 'whatever'
             ];
             var omitwebsite = false;
@@ -75,12 +78,21 @@ jQuery(document).ready(function ($) {
             });
             // Prepend Dealer Network verbiage to Title of the page
             if (omitwebsite) {
-                networkHTML += '<h3 class="network">This MicroSite is part of the Bomanite<sup>®</sup> Dealer Network</h3>';
+                if ( (bomanite_options.landingpage === "Minnesota") || (bomanite_options.landingpage === "Maryland") ) {
+                    if ( (bomanite_options.landingpage === "Minnesota") ) {
+                        networkHTML += '<h3 class="network">***</h3>';
+                    }
+                    if ( (bomanite_options.landingpage === "Maryland") ) {
+                        networkHTML += '<h3 class="network">Bomanite is looking for Licensees in the Maryland area!</h3>';
+                        networkHTML += '<h3 class="network">Please contact us at: <a href="http://' + website + '/find-licensed-contractors/' + '" target="_blank">' + website + '/find-licensed-contractors/</a></h3>';
+                    }
+                } else {
+                    networkHTML += '<h3 class="network">This MicroSite is part of the Bomanite<sup>®</sup> Dealer Network</h3>';
+                }
             } else {
                 // remove leading and trailing spaces
-                var website = jQuery.trim(jQuery('#bomanite_website a').text());
-                networkHTML += '<h3 class="network">This MicroSite is part of the Bomanite<sup>®</sup> Dealer Network and not the Offical Website of the Licensee</h3>';
-                networkHTML += '<h3 class="network">Offical Licensee Website: <a href="http://' + website + '" target="_blank">' + website + '</a></h3>';
+                networkHTML += '<h3 class="network">This MicroSite is part of the Bomanite<sup>®</sup> Dealer Network and not the Official Website of the Licensee</h3>';
+                networkHTML += '<h3 class="network">Official Licensee Website: <a href="http://' + website + '" target="_blank">' + website + '</a></h3>';
             }
             $('h1.entry-title').before(networkHTML);
 
