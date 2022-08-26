@@ -84,7 +84,7 @@ jQuery(document).ready(function ($) {
                     }
                     if ( (bomanite_options.landingpage === "Maryland") ) {
                         networkHTML += '<h3 class="network">Bomanite is looking for Licensees in the Maryland area!</h3>';
-                        networkHTML += '<h3 class="network">Please contact us at: <a href="http://' + website + '" target="_blank">' + website + '/find-licensed-contractors/</a></h3>';
+                        networkHTML += '<h3 class="network">Please contact us at: <a href="http://' + website + '" target="_blank">' + website + '</a></h3>';
                     }
                 } else {
                     networkHTML += '<h3 class="network">This MicroSite is part of the Bomanite<sup>®</sup> Dealer Network</h3>';
