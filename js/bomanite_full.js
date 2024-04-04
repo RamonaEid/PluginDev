@@ -63,6 +63,7 @@ jQuery(document).ready(function ($) {
                 'Connecticut Bomanite Systems',
                 'Minnesota',
                 'Maryland',
+                'Beyond Concrete NY',
                 'whatever'
             ];
             var omitwebsite = false;
